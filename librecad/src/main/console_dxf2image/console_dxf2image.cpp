@@ -28,13 +28,21 @@ int console_dxf2image(int argc, char* argv[]){
         }
         if(actOpt == "-all"){
             QDir directory(sourcePath);
-            QStringList dxfs = directory.entryList(QStringList() << "*.dxf" << "*.DXF",QDir::Files);
-            foreach(QString filename, dxfs) {
-                //imagePrinter->exportDxfAsImage(filename,,"jpg",false,true);
+            QFileInfoList dxfs = directory.entryInfoList(QStringList() << "*.dxf" << "*.DXF",QDir::Files);
+            foreach(QFileInfo filepath, dxfs) {
+                try {
+                    QString srcDxf = QDir(sourcePath).filePath(filepath.baseName() + ".dxf");
+                    QString destImage = QDir(destPath).filePath(filepath.baseName() + ".jpg");
+                    imagePrinter->exportDxfAsImage(srcDxf,destImage,"jpg",false,true);
+                } catch (EXCEPINFO ex) {
+
+                }
+
             }
+
         }
     }
 
     delete imagePrinter;
-
+    return 0;
 }
