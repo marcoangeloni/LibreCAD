@@ -46,6 +46,7 @@
 #include "rs_debug.h"
 
 #include "console_dxf2pdf.h"
+#include "console_dxf2image/console_dxf2image.h"
 
 
 /**
@@ -72,6 +73,9 @@ int main(int argc, char** argv)
         }
         if (arg.compare("dxf2pdf") == 0) {
             return console_dxf2pdf(argc, argv);
+        }
+        if (arg.compare("dxf2image") == 0) {
+            return console_dxf2image(argc, argv);
         }
     }
 

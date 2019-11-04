@@ -210,6 +210,8 @@ HEADERS += \
     lib/math/rs_math.h \
     lib/math/lc_quadratic.h \
     actions/lc_actiondrawcircle2pr.h \
+    main/console_dxf2image/console_dxf2image.h \
+    main/console_dxf2image/image_print.h \
     test/lc_simpletests.h \
     lib/generators/lc_makercamsvg.h \
     lib/generators/lc_xmlwriterinterface.h \
@@ -298,6 +300,8 @@ SOURCES += \
     lib/engine/rs_color.cpp \
     lib/engine/rs_pen.cpp \
     actions/lc_actiondrawcircle2pr.cpp \
+    main/console_dxf2image/console_dxf2image.cpp \
+    main/console_dxf2image/image_print.cpp \
     test/lc_simpletests.cpp \
     lib/generators/lc_xmlwriterqxmlstreamwriter.cpp \
     lib/generators/lc_makercamsvg.cpp \
